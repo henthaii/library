@@ -19,5 +19,7 @@ function addBookToLibrary(title,author,pages,read) {
   myLibrary.push(newBook);
 }
 
-addBookToLibrary(Modern, Anna, 197, no);
+new Book("Modern", "Anna", 197, "no");
+
+console.log(Book);
 console.log(myLibrary);

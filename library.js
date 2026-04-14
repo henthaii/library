@@ -8,12 +8,16 @@ function Book(title,author,pages,read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
+    const id = self.crypto.randomUUID();
     this.sayBook = function () {
         console.log(this.title);
     };
 }
 
 function addBookToLibrary(title,author,pages,read) {
-  const newBook = new Book(title, author, pages, read);
+  const newBook = new Book(title,author,pages,read);
   myLibrary.push(newBook);
 }
+
+addBookToLibrary(Modern, Anna, 197, no);
+console.log(myLibrary);

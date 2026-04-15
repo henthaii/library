@@ -27,8 +27,11 @@ new addBookToLibrary("Harry Potter","J.K. Rowling",269, "yes");
 // console.log(Book);
 console.log(myLibrary);
 
-myLibrary.forEach(item => {
-  let li = document.createElement('li');
-  li.innerText = item;
-  document.getElementById('myList').appendChild(li);
-})
+// myLibrary.forEach(item => {
+//   let li = document.createElement('li');
+//   li.innerText = item;
+//   document.getElementById('myList').appendChild(li);
+// })
+
+const list = document.getElementById("container");
+list.innerHTML = myLibrary.map(item => '<li>${item}</li>').join("");

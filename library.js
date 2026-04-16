@@ -33,5 +33,18 @@ console.log(myLibrary);
 //   document.getElementById('myList').appendChild(li);
 // })
 
-const list = document.getElementById("container");
-list.innerHTML = myLibrary.map(item => '<li>${item}</li>').join("");
+function displayBooks() {
+  const container = document.getElementById("container");
+  container.innerHTML = "";
+  myLibrary.forEach((book) => {
+    const bookCard = document.createElement('div');
+    bookCard.classList.add('bookcard');
+    bookCard.innerHTML = `
+      <h3>${book.title}</h3>
+      <p>Author: ${book.author}</p>
+      <p>Pages: ${book.pages}</p>
+      <p>Read: ${book.read}</p>`;
+    container.appendChild(bookCard);
+  });
+}
+// list.innerHTML = myLibrary.map(item => '<li>${item}</li>').join("");

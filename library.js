@@ -24,17 +24,10 @@ new addBookToLibrary("Modern Friendship", "Anna Goldfarb", 197, "no");
 new addBookToLibrary("The Hobbit","J.R.R. Tolkien",320,"no");
 new addBookToLibrary("Harry Potter","J.K. Rowling",269, "yes");
 
-// console.log(Book);
 console.log(myLibrary);
 
-// myLibrary.forEach(item => {
-//   let li = document.createElement('li');
-//   li.innerText = item;
-//   document.getElementById('myList').appendChild(li);
-// })
-
 function displayBooks() {
-  const container = document.getElementById("container");
+  const container = document.querySelector(".container");
   container.innerHTML = "";
   myLibrary.forEach((book) => {
     const bookCard = document.createElement('div');
@@ -47,4 +40,7 @@ function displayBooks() {
     container.appendChild(bookCard);
   });
 }
-// list.innerHTML = myLibrary.map(item => '<li>${item}</li>').join("");
+
+displayBooks(myLibrary);
+
+const newBookForm = document.querySelector("button").addEventListener("click",placeholder)

@@ -43,29 +43,36 @@ function displayBooks() {
 
 displayBooks(myLibrary);
 
-const newBookForm = document.querySelector("button").addEventListener("click",displayForm)
+// const newBookForm = document.querySelector("button").addEventListener("click",displayForm)
 
-function displayForm() {
-  const formContainer = document.querySelector(".form-container");
-  formContainer.innerHTML = "";
-  formContainer.innerHTML = `
-    <form action="" method="post">
-      <div>
-        <label for="new-book">Book</label>
-        <input type="text" name="new-book" id="new-book">
-      </div>
-      <div>
-      <label for="author">Author</label>
-      <input type="text" name="author" id="author">
-      </div>
-      <div>
-      <label for="pages">Number of Pages</label>
-      <input type="number" name="pages" id="pages">
-      </div>
-      <div>
-      <label for="read">Have you read this?</label>
-      <input type="text" name="read" id="read">
-      </div>
-    </form>
-  `
-}
+// function displayForm() {
+//   const formContainer = document.querySelector(".form-container");
+//   formContainer.innerHTML = "";
+//   formContainer.innerHTML = `
+//     <form action="" method="post">
+//       <div>
+//         <label for="new-book">Book</label>
+//         <input type="text" name="new-book" id="new-book">
+//       </div>
+//       <div>
+//         <label for="author">Author</label>
+//         <input type="text" name="author" id="author">
+//       </div>
+//       <div>
+//         <label for="pages">Number of Pages</label>
+//         <input type="number" name="pages" id="pages">
+//       </div>
+//       <div>
+//         <label for="read">Have you read this?</label>
+//         <input type="text" name="read" id="read">
+//       </div>
+//     </form>
+//   `
+// }
+
+const form = document.querySelector("form");
+
+form.addEventListener("submit",(event) => {
+  event.preventDefault();
+  console.log("Form submission prevented successfully");
+});

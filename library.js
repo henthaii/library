@@ -49,6 +49,7 @@ function displayForm() {
   const formContainer = document.querySelector(".form-container");
   formContainer.innerHTML = "";
   formContainer.innerHTML = `
+    <form action="" method="post">
       <div>
         <label for="new-book">Book</label>
         <input type="text" name="new-book" id="new-book">
@@ -59,11 +60,12 @@ function displayForm() {
       </div>
       <div>
       <label for="pages">Number of Pages</label>
-      <input type="text" name="pages" id="pages">
+      <input type="number" name="pages" id="pages">
       </div>
       <div>
       <label for="read">Have you read this?</label>
       <input type="text" name="read" id="read">
       </div>
+    </form>
   `
 }

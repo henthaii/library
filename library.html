@@ -13,24 +13,25 @@
     <button command="show-modal" commandfor="my-dialog">New Book</button>
     <dialog id="my-dialog">
         <form action="file:///home/henthai/repos/library/library.html" method="post">
-      <div>
-        <label for="new-book">Book</label>
-        <input type="text" name="new-book" id="new-book">
-      </div>
-      <div>
-        <label for="author">Author</label>
-        <input type="text" name="author" id="author">
-      </div>
-      <div>
-        <label for="pages">Number of Pages</label>
-        <input type="number" name="pages" id="pages">
-      </div>
-      <div>
-        <label for="read">Have you read this?</label>
-        <input type="text" name="read" id="read">
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+            <div>
+                <label for="book">Book</label>
+                <input type="text" name="book" id="book">
+            </div>
+            <div>
+                <label for="author">Author</label>
+                <input type="text" name="author" id="author">
+            </div>
+            <div>
+                <label for="pages">Number of Pages</label>
+                <input type="number" name="pages" id="pages">
+            </div>
+            <div>
+                <label for="read">Have you read this?</label>
+                <input type="text" name="read" id="read">
+            </div>
+            <button type="submit">Submit</button>
+
+        </form>
     </dialog>
 <script src="library.js">
 // Your JavaScript goes here!

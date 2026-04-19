@@ -73,6 +73,8 @@ displayBooks(myLibrary);
 const form = document.querySelector("form");
 
 form.addEventListener("submit",(event) => {
+
   event.preventDefault();
-  console.log("Form submission prevented successfully");
+  // console.log("Form submission completed and refresh prevented successfully");
 });
+

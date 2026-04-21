@@ -70,11 +70,14 @@ displayBooks(myLibrary);
 //   `
 // }
 
-const form = document.querySelector("form");
+const submit = document.querySelector("submit");
+const close = document.querySelector("close");
 
-form.addEventListener("submit",(event) => {
-
+submit.addEventListener("click",(event) => {
   event.preventDefault();
-  // console.log("Form submission completed and refresh prevented successfully");
+  console.log("Form submission completed and refresh prevented successfully");
 });
 
+close.addEventListener("click",() => {
+  dialog.close()
+});

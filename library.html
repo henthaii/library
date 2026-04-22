@@ -5,11 +5,20 @@
 <meta charset="UTF-8">
 <meta name="viewport">
 <link rel="stylesheet" href="library.css">
-<title>Project:Library</title>
+<title>Project: Library</title>
 </head>
 <body>
+    <h1>My Library</h1>
     <div class="container"></div>
-    <div class="form-container"></div>
+    <table class="table-container">
+      <tr>
+        <td>Title</td>
+        <td>Author</td>
+        <td>Pages</td>
+        <td>Read</td>
+      </tr>
+    </table>
+    <!-- <div class="form-container"></div> -->
     <button command="show-modal" commandfor="my-dialog">New Book</button>
     <dialog id="my-dialog">
         <form action="file:///home/henthai/repos/library/library.html" method="post">
@@ -30,7 +39,7 @@
                 <input type="text" name="read" id="read">
             </div>
             <button type="submit">Submit</button>
-            <button value="cancel">Close</button>
+            <button class="close">Close</button>
         </form>
     </dialog>
 <script src="library.js">

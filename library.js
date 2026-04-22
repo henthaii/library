@@ -27,17 +27,18 @@ new addBookToLibrary("Harry Potter","J.K. Rowling",269, "yes");
 console.log(myLibrary);
 
 function displayBooks() {
-  const container = document.querySelector(".container");
-  container.innerHTML = "";
+  const tableContainer = document.querySelector(".table-container");
+  // tableContainer.innerHTML = "";
   myLibrary.forEach((book) => {
-    const bookCard = document.createElement('div');
-    bookCard.classList.add('bookcard');
+    const bookCard = document.createElement('tr');
+    bookCard.classList.add('bookCard');
     bookCard.innerHTML = `
-      <h3>${book.title}</h3>
-      <p>Author: ${book.author}</p>
-      <p>Pages: ${book.pages}</p>
-      <p>Read: ${book.read}</p>`;
-    container.appendChild(bookCard);
+        <td><h3>${book.title}</h3></td>
+        <td><p>Author: ${book.author}</p></td>
+        <td><p>Pages: ${book.pages}</p></td>
+        <td><p>Read: ${book.read}</p></td>
+      `;
+    tableContainer.appendChild(bookCard);
   });
 }
 

@@ -34,9 +34,10 @@ function displayBooks() {
     bookCard.classList.add('bookCard');
     bookCard.innerHTML = `
         <td><h3>${book.title}</h3></td>
-        <td><p>Author: ${book.author}</p></td>
-        <td><p>Pages: ${book.pages}</p></td>
-        <td><p>Read: ${book.read}</p></td>
+        <td><p>${book.author}</p></td>
+        <td><p>${book.pages}</p></td>
+        <td><p>${book.read}</p></td>
+        <td><button>Delete</button></td>
       `;
     tableContainer.appendChild(bookCard);
   });
@@ -45,7 +46,7 @@ function displayBooks() {
 displayBooks(myLibrary);
 
 const form = document.querySelector("form");
-const close = document.querySelector(".close");
+const close = document.querySelector(".close + button");
 
 form.addEventListener("submit",(event) => {
   event.preventDefault();
@@ -56,3 +57,4 @@ form.addEventListener("submit",(event) => {
 close.addEventListener("click",() => {
   dialog.close()
 });
+

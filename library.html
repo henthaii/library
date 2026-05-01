@@ -22,7 +22,7 @@
     <!-- <div class="form-container"></div> -->
     <button command="show-modal" commandfor="my-dialog">New Book</button>
     <dialog id="my-dialog">
-        <form action="file:///home/henthai/repos/library/library.html" method="post">
+        <form method="dialog">
             <div>
                 <label for="book">Book</label>
                 <input type="text" name="book" id="book">
@@ -37,10 +37,10 @@
             </div>
             <div>
                 <label for="read">Have you read this?</label>
-                <input type="text" name="read" id="read">
+                <input type="checkbox" name="read" id="read">
             </div>
             <button type="submit">Submit</button>
-            <button type="button" class="close">Close</button>
+            <button formmethod="dialog" formnovalidate>Close</button>
         </form>
     </dialog>
 <script src="library.js">

@@ -4,6 +4,7 @@ body {
 
 table, td, th {
     border: 1px solid black;
+    gap: 0px;
 }
 
 /* .bookcard {

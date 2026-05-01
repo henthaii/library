@@ -46,12 +46,15 @@ function displayBooks() {
 displayBooks(myLibrary);
 
 const form = document.querySelector("form");
-const close = document.querySelector(".close + button");
+const close = document.querySelector(".close");
+const dialog = document.querySelector('#my-dialog');
 
 form.addEventListener("submit",(event) => {
   event.preventDefault();
+  const formData = new FormData(form);
+
+  const bookData = Object.fromEntries(formData.entries());
   console.log("Form submission completed and refresh prevented successfully");
-  // const formData = new
 });
 
 close.addEventListener("click",() => {

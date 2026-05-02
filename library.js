@@ -1,5 +1,7 @@
 const myLibrary = [];
 
+//Book constructors, library function, display books
+
 function Book(title,author,pages,read) {
      if (!new.target) {
     throw Error("You must use the 'new' operator to call the constructor");
@@ -28,16 +30,15 @@ console.log(myLibrary);
 
 function displayBooks() {
   const tableContainer = document.querySelector(".table-container");
-  // tableContainer.innerHTML = "";
   myLibrary.forEach((book) => {
     const bookCard = document.createElement('tr');
     bookCard.classList.add('bookCard');
     bookCard.innerHTML = `
-        <td><h3>${book.title}</h3></td>
+        <td><p>${book.title}</p></td>
         <td><p>${book.author}</p></td>
         <td><p>${book.pages}</p></td>
         <td><p>${book.read}</p></td>
-        <td><button>Delete</button></td>
+        <td><button class="delete">Delete</button></td>
       `;
     tableContainer.appendChild(bookCard);
   });
@@ -45,8 +46,10 @@ function displayBooks() {
 
 displayBooks(myLibrary);
 
+//Dialog + form section
+
 const form = document.querySelector("form");
-const close = document.querySelector(".close");
+const close = document.querySelector("button[type='button']");
 const dialog = document.querySelector('#my-dialog');
 
 form.addEventListener("submit",(event) => {
@@ -59,5 +62,15 @@ form.addEventListener("submit",(event) => {
 
 close.addEventListener("click",() => {
   dialog.close()
+  console.log("Form successfully closed.")
 });
 
+//Deleting book
+
+const deleteRow = document.querySelector(".delete");
+
+deleteRow.addEventListener("click",(event) =>
+  function deleteRow(button) {
+  const row = button.closest('tr');
+  row.remove;
+});

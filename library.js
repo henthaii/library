@@ -10,7 +10,7 @@ function Book(title,author,pages,read) {
     this.author = author;
     this.pages = pages;
     this.read = read;
-    this.id = self.crypto.randomUUID();
+    this.id = crypto.randomUUID();
     this.sayBook = function () {
         console.log(this.title);
         console.log(this.id);
@@ -57,6 +57,8 @@ form.addEventListener("submit",(event) => {
   const formData = new FormData(form);
 
   const bookData = Object.fromEntries(formData.entries());
+  myLibrary.push(bookData);
+  form.reset();
   console.log("Form submission completed and refresh prevented successfully");
 });
 

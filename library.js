@@ -57,7 +57,6 @@ const dialog = document.querySelector('#my-dialog');
 form.addEventListener("submit",(event) => {
   event.preventDefault();
   const formData = new FormData(form);
-
   const bookData = Object.fromEntries(formData.entries());
   myLibrary.push(bookData);
   form.reset();
@@ -71,11 +70,14 @@ close.addEventListener("click",() => {
 
 //Deleting book
 
-const deleteButton = document.querySelector(".delete");
+const deleteButton = document.querySelector(".table-container");
 
 deleteButton.addEventListener("click",(event) => {
-  function deleteRow(button) {
-    const row = button.closest('tr');
-    row.remove();
-    console.log("Deleted row")
-}});
+  if (event.target.classList.contains("delete")) {  
+    const row = event.target.closest('tr');
+    if (row) {
+      row.remove();
+      console.log("Deleted row")
+    }
+  }  
+});

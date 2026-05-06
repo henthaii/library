@@ -34,11 +34,13 @@ function displayBooks() {
     const bookCard = document.createElement('tr');
     bookCard.classList.add('bookCard');
     bookCard.innerHTML = `
-        <td><p>${book.title}</p></td>
-        <td><p>${book.author}</p></td>
-        <td><p>${book.pages}</p></td>
-        <td><p>${book.read}</p></td>
-        <td><button class="delete">Delete</button></td>
+        <tr>
+          <td><p>${book.title}</p></td>
+          <td><p>${book.author}</p></td>
+          <td><p>${book.pages}</p></td>
+          <td><p>${book.read}</p></td>
+          <td><button class="delete">Delete</button></td>
+        </tr>
       `;
     tableContainer.appendChild(bookCard);
   });
@@ -69,10 +71,11 @@ close.addEventListener("click",() => {
 
 //Deleting book
 
-const deleteRow = document.querySelector(".delete");
+const deleteButton = document.querySelector(".delete");
 
-deleteRow.addEventListener("click",(event) =>
+deleteButton.addEventListener("click",(event) => {
   function deleteRow(button) {
-  const row = button.closest('tr');
-  row.remove;
-});
+    const row = button.closest('tr');
+    row.remove();
+    console.log("Deleted row")
+}});

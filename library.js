@@ -22,25 +22,25 @@ function addBookToLibrary(title,author,pages,read) {
   myLibrary.push(newBook);
 }
 
-new addBookToLibrary("Modern Friendship", "Anna Goldfarb", 197, "no");
-new addBookToLibrary("The Hobbit","J.R.R. Tolkien",320,"no");
-new addBookToLibrary("Harry Potter","J.K. Rowling",269, "yes");
+// addBookToLibrary("Modern Friendship", "Anna Goldfarb", 197, "no");
+// addBookToLibrary("The Hobbit","J.R.R. Tolkien",320,"no");
+// addBookToLibrary("Harry Potter","J.K. Rowling",269, "yes");
 
 console.log(myLibrary);
 
 function displayBooks() {
-  const tableContainer = document.querySelector(".table-container");
+  const tableContainer = document.querySelector(".table-body");
+  tableContainer.replaceChildren();
   myLibrary.forEach((book) => {
     const bookCard = document.createElement('tr');
+    bookCard.dataset.id = book.id;
     bookCard.classList.add('bookCard');
     bookCard.innerHTML = `
-        <tr>
           <td><p>${book.title}</p></td>
           <td><p>${book.author}</p></td>
           <td><p>${book.pages}</p></td>
           <td><p>${book.read}</p></td>
           <td><button class="delete">Delete</button></td>
-        </tr>
       `;
     tableContainer.appendChild(bookCard);
   });
@@ -57,12 +57,18 @@ const dialog = document.querySelector('#my-dialog');
 form.addEventListener("submit",(event) => {
   event.preventDefault();
   const formData = new FormData(form);
-  const bookData = Object.fromEntries(formData.entries());
-  myLibrary.push(bookData);
+  addBookToLibrary(
+    formData.get('title'), 
+    formData.get('author'), 
+    formData.get('pages'), 
+    formData.get('read')
+  );
   form.reset();
+  dialog.close();
   console.log("Form submission completed and refresh prevented successfully");
+  displayBooks();
 });
-
+  
 close.addEventListener("click",() => {
   dialog.close()
   console.log("Form successfully closed.")
@@ -70,7 +76,7 @@ close.addEventListener("click",() => {
 
 //Deleting book
 
-const deleteButton = document.querySelector(".table-container");
+const deleteButton = document.querySelector(".table-body");
 
 deleteButton.addEventListener("click",(event) => {
   if (event.target.classList.contains("delete")) {  
@@ -80,4 +86,4 @@ deleteButton.addEventListener("click",(event) => {
       console.log("Deleted row")
     }
   }  
-});
+}); //ty istvan-takacs

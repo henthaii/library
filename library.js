@@ -1,6 +1,6 @@
 const myLibrary = [];
 
-//Book constructors, library function, display books
+// Book constructors, library function, display books
 
 function Book(title,author,pages,read) {
      if (!new.target) {
@@ -48,7 +48,7 @@ function displayBooks() {
 
 displayBooks(myLibrary);
 
-//Dialog + form section
+// Dialog + form section
 
 const form = document.querySelector("form");
 const close = document.querySelector("button[type='button']");
@@ -74,7 +74,7 @@ close.addEventListener("click",() => {
   console.log("Form successfully closed.")
 });
 
-//Deleting book
+// Deleting book
 
 const deleteButton = document.querySelector(".table-body");
 
@@ -82,8 +82,15 @@ deleteButton.addEventListener("click",(event) => {
   if (event.target.classList.contains("delete")) {  
     const row = event.target.closest('tr');
     if (row) {
+      // Remove from table
       row.remove();
+      // Remove from array
+      deleteBookCard(row);
       console.log("Deleted row")
     }
-  }  
-}); //ty istvan-takacs
+  }
+  function deleteBookCard(bookCard) {
+    const bookCardID = row.dataset.id;
+    myLibrary.myLibrary.filter (item => item.ID != bookCardID);
+  }
+});

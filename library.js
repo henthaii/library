@@ -22,9 +22,9 @@ function addBookToLibrary(title,author,pages,read) {
   myLibrary.push(newBook);
 }
 
-// addBookToLibrary("Modern Friendship", "Anna Goldfarb", 197, "no");
-// addBookToLibrary("The Hobbit","J.R.R. Tolkien",320,"no");
-// addBookToLibrary("Harry Potter","J.K. Rowling",269, "yes");
+addBookToLibrary("Modern Friendship", "Anna Goldfarb", 197, "no");
+addBookToLibrary("The Hobbit","J.R.R. Tolkien",320,"no");
+addBookToLibrary("Harry Potter","J.K. Rowling",269, "yes");
 
 console.log(myLibrary);
 
@@ -82,15 +82,15 @@ deleteButton.addEventListener("click",(event) => {
   if (event.target.classList.contains("delete")) {  
     const row = event.target.closest('tr');
     if (row) {
+      const bookCardID = row.dataset.id;
+      const index = myLibrary.findIndex(item => item.id == bookCardID);
       // Remove from table
       row.remove();
-      // Remove from array
-      deleteBookCard(row);
-      console.log("Deleted row")
+      // Remove from library
+      if (index > -1) {
+        myLibrary.splice(index,1);
+      }
+      console.log("Deleted row");
     }
-  }
-  function deleteBookCard(bookCard) {
-    const bookCardID = row.dataset.id;
-    myLibrary.myLibrary.filter (item => item.ID != bookCardID);
   }
 });

@@ -1,16 +1,37 @@
 body {
     font-family: 'Courier New', Courier, monospace;
+    background-color: #F4F0E8;
 }
 
 .container {
     height: 100%;
+    width: 100%;
 }
 
-table, td, th {
-    border: 1px solid black;
+table, td {
+    border: 2px solid black;
+    /* margin: 10px; */
+    border-collapse:collapse;
+}
+
+td {
+    text-align: center;
+    width: 200px;
+    text-wrap: wrap;
+    height: 100px;
+}
+
+thead {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.new-button {
+    display:flex;
     margin: 10px;
+    justify-content: center;
 }
 
-/* .bookcard {
-    border: 1px solid black;
-} */
+.read {
+    width: 100px;
+}

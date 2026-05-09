@@ -36,10 +36,10 @@ function displayBooks() {
     bookCard.dataset.id = book.id;
     bookCard.classList.add('bookCard');
     bookCard.innerHTML = `
-          <td><p>${book.title}</p></td>
-          <td><p>${book.author}</p></td>
-          <td><p>${book.pages}</p></td>
-          <td>
+          <td>${book.title}</td>
+          <td>${book.author}</td>
+          <td>${book.pages}</td>
+          <td class="read">
             <label>
               <input type="checkbox" name="read" value="yes" ${book.read === 'yes' ? 'checked' : ''}>
             </label>

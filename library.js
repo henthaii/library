@@ -39,7 +39,11 @@ function displayBooks() {
           <td><p>${book.title}</p></td>
           <td><p>${book.author}</p></td>
           <td><p>${book.pages}</p></td>
-          <td><p>${book.read}</p></td>
+          <td>
+            <label>
+              <input type="checkbox" name="read" value="yes" ${book.read === 'yes' ? 'checked' : ''}>
+            </label>
+          </td>
           <td><button class="delete">Delete</button></td>
       `;
     tableContainer.appendChild(bookCard);
@@ -74,16 +78,16 @@ close.addEventListener("click",() => {
   console.log("Form successfully closed.")
 });
 
-// Deleting book
+// Deleting book from table and array
 
 const deleteButton = document.querySelector(".table-body");
 
 deleteButton.addEventListener("click",(event) => {
   if (event.target.classList.contains("delete")) {  
     const row = event.target.closest('tr');
+    const bookCardID = row.dataset.id;
+    const index = myLibrary.findIndex(item => item.id == bookCardID);
     if (row) {
-      const bookCardID = row.dataset.id;
-      const index = myLibrary.findIndex(item => item.id == bookCardID);
       // Remove from table
       row.remove();
       // Remove from library
@@ -94,3 +98,6 @@ deleteButton.addEventListener("click",(event) => {
     }
   }
 });
+
+// Book read status
+

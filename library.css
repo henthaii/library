@@ -1,12 +1,15 @@
 body {
     font-family: 'Courier New', Courier, monospace;
     background-color: #F4F0E8;
+    max-width: 922px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
-    max-width: 935px;
+    align-items: center;
+    /* padding-left: 5px;
+    padding-right: 5px; */
 }
 
 .container {
@@ -36,8 +39,10 @@ td {
 
 .new-button {
     display:flex;
-    margin: 10px;
     justify-content: center;
+    height: 50px;
+    width: 100px;
+    align-items: center;
 }
 
 .pages {

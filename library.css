@@ -3,6 +3,12 @@ body {
     background-color: #F4F0E8;
 }
 
+header {
+    display: flex;
+    justify-content: space-between;
+    max-width: 935px;
+}
+
 .container {
     height: 100%;
     width: 100%;
@@ -14,17 +20,19 @@ table, td {
     border-collapse:collapse;
 }
 
-td {
-    text-align: center;
-    width: 200px;
-    text-wrap: wrap;
-    height: 100px;
-}
-
 thead {
     font-weight: bold;
     font-size: 20px;
+    height: 25px;
 }
+
+td {
+    text-align: center;
+    width: 300px;
+    text-wrap: wrap;
+    height: 50px;
+}
+
 
 .new-button {
     display:flex;
@@ -32,6 +40,14 @@ thead {
     justify-content: center;
 }
 
+.pages {
+    width: 100px;
+}
+
 .read {
+    width: 100px;
+}
+
+.delete-column {
     width: 100px;
 }

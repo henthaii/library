@@ -38,13 +38,13 @@ function displayBooks() {
     bookCard.innerHTML = `
           <td>${book.title}</td>
           <td>${book.author}</td>
-          <td>${book.pages}</td>
+          <td class="pages">${book.pages}</td>
           <td class="read">
             <label>
               <input type="checkbox" name="read" value="yes" ${book.read === 'yes' ? 'checked' : ''}>
             </label>
           </td>
-          <td><button class="delete">Delete</button></td>
+          <td class="delete-column"><button class="delete">Delete</button></td>
       `;
     tableContainer.appendChild(bookCard);
   });

@@ -2,28 +2,15 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport">
-<link rel="stylesheet" href="library.css">
-<title>Project: Library</title>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <link rel="stylesheet" href="library.css">
+    <title>Project: Library</title>
 </head>
 <body>
-    <div class="container">
+    <header>
         <h1>My Library</h1>
-        <table class="table-container">
-            <thead>
-                <tr>
-                    <td>Title</td>
-                    <td>Author</td>
-                    <td>Pages</td>
-                    <td class="read">Read</td>
-                    <td>Delete</td>
-                </tr>
-            </thead>
-            <tbody class="table-body">
-            </tbody>
-        </table>
-        <button class="new-button" command="show-modal" commandfor="my-dialog">New Book</button>
+        <button class="new-button" command="show-modal" commandfor="my-dialog">Add New Book</button>
         <dialog id="my-dialog">
             <form>
                 <div>
@@ -46,11 +33,23 @@
             </form>
             <button type="button">Close</button>
         </dialog>
+    </header>
+    <div class="container">
+        <table class="table-container">
+            <thead>
+                <tr>
+                    <td>Title</td>
+                    <td>Author</td>
+                    <td class="pages">Pages</td>
+                    <td class="read">Read</td>
+                    <td class="delete-column">Delete</td>
+                </tr>
+            </thead>
+            <tbody class="table-body">
+            </tbody>
+        </table>
     </div>
 <script src="library.js">
-// Your JavaScript goes here!
-console.log(
-)
 </script>
 </body>
 </html>

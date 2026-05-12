@@ -41,7 +41,9 @@ td {
     display:flex;
     justify-content: center;
     height: 50px;
-    width: 100px;
+    width: 106px;
+    /* padding: 1px;
+    border: 2px; */
     align-items: center;
 }
 
@@ -55,4 +57,12 @@ td {
 
 .delete-column {
     width: 100px;
+}
+
+::backdrop {
+    background-color: #f4f0e82f;
+}
+
+.label {
+    margin: 5px;
 }

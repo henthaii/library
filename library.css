@@ -59,10 +59,6 @@ td {
     width: 100px;
 }
 
-::backdrop {
-    background-color: #f4f0e82f;
-}
-
 .label {
     margin: 5px;
 }

@@ -31,6 +31,16 @@ class Book {
 //     };
 // }
 
+const book = document.getElementById("book");
+
+book.addEventListener("input", (event) => {
+  if(book.validity.tooShort) {
+    book.setCustomValidity("Please check your book title again.");
+  } else {
+    book.setCustomValidity("");
+  }
+});
+
 function addBookToLibrary(title,author,pages,read) {
   const newBook = new Book(title,author,pages,read);
   myLibrary.push(newBook);
